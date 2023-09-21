@@ -1,0 +1,252 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,400;0,500;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,400;0,500;1,400&family=Roboto+Slab:wght@300&display=swap');
+
+body{
+    margin: 0;
+    padding: 0;
+    /* position fixed en el body se utiliza para que los landing page no tengan scroll, junto con top=0,bottom=0, left=0 y right=0*/
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    font-family: 'Roboto',sans-serif;
+}
+.container{
+    display: flex;
+    height: 90%;
+    width: 100%;
+    color: white;
+    margin: 0 auto;
+    justify-content: right;
+    align-items: center;
+    background-image: linear-gradient(to right, transparent, #28396D 80%), 
+    url('/Assets/Images/Kv2_1.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: left;
+}
+.hero{
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    max-width: 600px;
+    height: 400px;
+    /* height: 100%; */
+    gap: 20px;
+    /* grid-template-rows: 1fr 2fr 1fr;
+    grid-template-columns: auto; */
+    font-family: 'Roboto',sans-serif;
+    margin-top: 300px;
+    margin-right: 200px;
+    margin-bottom: 350px;
+    text-align: center;
+}
+.hero-title{
+    /* width: inherit; */
+    width: 100%;
+    padding-top: 25px;
+
+    text-align: center;
+}
+.hero-title h1{
+    width: 100%;
+    font-size: 4rem;
+    letter-spacing: 8px;
+    margin: 0;
+    text-align: center;
+}
+.hero-text{
+    height: 130px;
+    border: 2px solid white;
+    padding: 20px 35px;
+}
+.hero-text h2{
+    height: inherit;
+    font-size: 1.8rem;
+    margin: 0;
+    letter-spacing: 5px;
+}
+.hero button{
+    border: none;
+    padding: 8px 120px;
+    margin-top: 12px;
+    border-radius: 20px;
+    font-weight: bolder;
+    font-family: 'Roboto',sans-serif;
+    font-size: 1rem;
+    background-color: rgb(88, 140, 151);
+    color: white;
+    cursor: pointer;
+}
+footer{
+    width: 100%;
+    height: 10%;
+    background-image: linear-gradient(to right, #6F9AAD 20%, rgb(3, 3, 65) 80%);
+}
+.footer-container{
+    width: 100%;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    background-color: white;
+}
+.footer-icons{
+    height: inherit;
+}
+
+.footer-icon{
+    width: 100px;
+    height: 100px;
+}
+.footer-icon img{
+    width: 80px;
+    height: inherit;
+}
+.footer-text{
+    width: 30%;
+    font-size: 0.7rem;
+    text-align: center;
+    font-weight: bolder;
+    color: lightslategray;
+}
+.footer-text p{
+    margin-top: 0;
+}
+.overlay.active{
+    visibility: visible;
+}
+@media screen and (min-width:1000px){
+    .container{
+         background-image: linear-gradient(to right, transparent, #28396D 60%), 
+        url('/Assets/Images/Kv2_1.png');
+    }
+    footer{
+        background-image: linear-gradient(to right, #6F9AAD 20%, #28396D 60%);
+    }
+}
+.overlay{
+    background-color: rgba(0,0,0,.8);
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Roboto',sans-serif;
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+    visibility: hidden;
+}
+
+.overlay.active{
+    visibility: visible;
+}
+.popup{
+    background-color: white;
+    box-shadow: 0px 0px 5px 8px rgba(0,0,0,0.2);
+    border-radius: 3px;
+    padding: 20px;
+    text-align: center;
+    width: 550px;
+    height: 1100px;
+    opacity: 0;
+    transition: .3s ease all;
+    transform: scale(0.7);
+    
+}
+ .popup .btn-cerrar-popup{
+    background-color: #28396D;
+    padding: 20px 60px;
+    border-radius: 50px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: center;
+    color: white;
+    font-family: 'Roboto',sans-serif;
+    border: none;
+    box-shadow: 0px 0px 5px 2px rgba(0,0,0,0.3);
+    margin-bottom: 20px;
+} 
+.popup .btn-cerrar-popup:hover{
+    box-shadow: none;
+}
+.popup h2{
+    font-size: 2rem;
+    font-weight: bold;
+    margin: 30px 0 15px 0;
+
+}
+.popup .tendero{
+    margin-top: 180px;
+}
+.popup .contenedor-inputs{
+    display: flex;
+    flex-direction: column;
+    /* display: grid;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-auto-columns: 1fr; */
+    font-family: 'Roboto',sans-serif;
+    padding: 30px 30px 0 30px;
+    
+}
+.popup .contenedor-inputs .user{
+    font-size: 1.5rem;
+    text-align: left;
+    margin-bottom: 8px;
+    font-weight: bolder;
+    
+}
+.popup .contenedor-inputs .pass{
+    font-size: 1.5rem;
+    text-align: left;
+    margin-bottom: 8px;
+    font-weight: bolder;
+}
+.popup .contenedor-inputs input{
+    margin-bottom: 20px;
+    border-radius: 30px;
+    padding: 15px;
+    font-size: 1.2rem;
+    background-color: rgb(237, 237, 237);
+    border: 2px solid grey;
+    outline: none;
+}
+.popup .button-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.popup .button-container .captcha-img{
+    width: 250px;
+    height: 60px;
+    margin-top: 8px;
+    margin-bottom: 20px;
+}
+.popup .button-container a{
+    font-size: 1.2rem;
+    font-weight: bolder;
+    margin-top: 10px;
+    margin-bottom: 30px;
+    color: #6F9AAD;
+}
+.overlay-footer .overlay-footer-icons .footer-icon{
+    height: 90px;
+}
+
+.overlay-footer .overlay-footer-text{
+    font-weight: bolder;
+    font-size: 1rem;
+    padding: 10px;
+}
+.popup.active{
+    opacity: 1;
+    transform: scale(1);
+}
